@@ -1,0 +1,21 @@
+{
+  "name": "asp.net-mvc-boilerplate",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "3.3.6",
+    "font-awesome": "4.6.1",
+    "jquery": "2.2.2",
+    "modernizr": "2.8.3",
+    "angular": "~1.5.5",
+    "angular-material": "~1.0.8",
+    "angular-material-sass-files": "~1.0.5",
+    "material": "https://github.com/angular/material.git#~1.0.8",
+    "requirejs-plugins": "~1.0.3",
+    "require-css": "~0.1.8",
+    "requirejs": "~2.2.0"
+  },
+  "devDependencies": {
+    "mocha": "2.4.5",
+    "DefinitelyTyped": "*"
+  }
+}

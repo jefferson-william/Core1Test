@@ -6,14 +6,14 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>a7d2910c-01d3-40b9-8705-e15f9a2c3e31</ProjectGuid>
-    <RootNamespace>Core1Test.Presentation.Api</RootNamespace>
+    <ProjectGuid>77529b54-6d13-4713-86d7-a86621ffd50e</ProjectGuid>
+    <RootNamespace>Core1Test.Presentation.App</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <DevelopmentServerPort>5000</DevelopmentServerPort>
+    <DevelopmentServerPort>5001</DevelopmentServerPort>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>

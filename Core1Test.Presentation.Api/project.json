@@ -1,4 +1,5 @@
 {
+  "webroot": "wwwroot",
   "version": "1.0.0-*",
   "compilationOptions": {
     "emitEntryPoint": true
@@ -21,7 +22,8 @@
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel"
+    "web": "Microsoft.AspNet.Hosting server.name=Microsoft.AspNet.Server.WebListener server.urls=http://localhost:5001",
+    "kestrel" : "Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5002"
   },
 
   "frameworks": {

@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "ASPNET_ENV": "Development"
+      }
+    },
+    "web": {
+      "commandName": "web",
+      "sdkVersion": "dnx-clr-win-x86.1.0.0-rc1-update2"
+    }
+  }
+}
