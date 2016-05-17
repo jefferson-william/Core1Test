@@ -27,6 +27,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.2 - Presentation.App", "
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Core1Test.Presentation.App", "Core1Test.Presentation.App\Core1Test.Presentation.App.xproj", "{77529B54-6D13-4713-86D7-A86621FFD50E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2060E16A-3778-4BB2-B102-F9565FF481AB}"
+	ProjectSection(SolutionItems) = preProject
+		Core1Test.Presentation.Api\global.json = Core1Test.Presentation.Api\global.json
+		Core1Test.Presentation.App\global.json = Core1Test.Presentation.App\global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.1.1 - Presentation.Interface", "00.1.1 - Presentation.Interface", "{9ECCD4F9-28BC-40B7-BC9E-6B312BDAF33B}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Core1Test.Presentation.Interface", "Core1Test.Presentation.Interface\Core1Test.Presentation.Interface.xproj", "{1839067E-4FEB-461E-BC91-C6528FB680D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +63,10 @@ Global
 		{77529B54-6D13-4713-86D7-A86621FFD50E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77529B54-6D13-4713-86D7-A86621FFD50E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77529B54-6D13-4713-86D7-A86621FFD50E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1839067E-4FEB-461E-BC91-C6528FB680D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1839067E-4FEB-461E-BC91-C6528FB680D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1839067E-4FEB-461E-BC91-C6528FB680D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1839067E-4FEB-461E-BC91-C6528FB680D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +80,8 @@ Global
 		{AFBB5FD2-FB81-4CC4-B4A3-ACFDB9A5CAC9} = {DA5BD42B-CD78-4A1B-91D3-1A16CD99689E}
 		{06FDFA5B-552E-44AF-BD58-89341F3A942C} = {44384255-4C45-4E79-B4B8-F816BF499EFC}
 		{77529B54-6D13-4713-86D7-A86621FFD50E} = {06FDFA5B-552E-44AF-BD58-89341F3A942C}
+		{9ECCD4F9-28BC-40B7-BC9E-6B312BDAF33B} = {44384255-4C45-4E79-B4B8-F816BF499EFC}
+		{1839067E-4FEB-461E-BC91-C6528FB680D1} = {9ECCD4F9-28BC-40B7-BC9E-6B312BDAF33B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .
