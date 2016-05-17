@@ -1,4 +1,6 @@
 *.sublime-*
+**/*.sublime-*
 **/bin/
 **/node_modules/
 **/bower_components/
+**/*.min.cshtml
