@@ -31,6 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Core1Test.Presentation.Api\global.json = Core1Test.Presentation.Api\global.json
 		Core1Test.Presentation.App\global.json = Core1Test.Presentation.App\global.json
+		global.json = global.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.1.1 - Presentation.Interface", "00.1.1 - Presentation.Interface", "{9ECCD4F9-28BC-40B7-BC9E-6B312BDAF33B}"
