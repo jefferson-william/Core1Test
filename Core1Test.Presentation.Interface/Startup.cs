@@ -1,8 +1,6 @@
 namespace Core1Test.Presentation.Interface
 {
     using System.Reflection;
-    using Boilerplate.Web.Mvc;
-    using Boilerplate.Web.Mvc.Razor;
     using Microsoft.AspNet.Builder;
     using Microsoft.AspNet.Hosting;
     using Microsoft.AspNet.Mvc.Razor;
