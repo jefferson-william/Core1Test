@@ -1,4 +1,4 @@
-/// <binding Clean="clean" BeforeBuild="build" ProjectOpened="watch"/>
+/// <binding Clean='clean' ProjectOpened='watch' />
 // The above line of code enables Visual Studio to automatically start Gulp tasks at certain key moments. The 'clean'
 // task is run on solution clean, the 'build' task is run on solution build and the 'watch' task is run on opening the
 // solution. You can also edit the above using the Task Runner Explorer window in Visual Studio
