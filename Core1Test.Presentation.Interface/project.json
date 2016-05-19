@@ -4,6 +4,9 @@
   "version": "1.0.0-*",
 
   "dependencies": {
+    "Boilerplate.Web.Mvc6": "2.0.0-rc1-final-5",
+    "Boilerplate.Web.Mvc6.TagHelpers": "2.0.0-rc1-final-3",
+    "Boilerplate.Web.Mvc6.Razor": "2.0.0-rc1-final-3",
     "Glimpse": "2.0.0-beta1",
     "Microsoft.AspNet.CookiePolicy": "1.0.0-rc1-final",
     "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
@@ -37,6 +40,9 @@
     "dnx451": {
       "frameworkAssemblies": {
         "System.Net.Http": "4.0.0.0"
+      },
+      "dependencies": {
+        "Boilerplate.Web.Mvc6": "2.0.0-rc1-final-5"
       }
     },
     "dnxcore50": {

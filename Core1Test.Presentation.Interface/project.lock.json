@@ -20496,6 +20496,7 @@
       "Newtonsoft.Json >= 8.0.1"
     ],
     "DNX,Version=v4.5.1": [
+      "Boilerplate.Web.Mvc6 >= 2.0.0-rc1-final-5",
       "fx/System.Net.Http >= 4.0.0"
     ],
     "DNXCore,Version=v5.0": [
