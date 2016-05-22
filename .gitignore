@@ -1,10 +1,11 @@
 *.sublime-*
 **/*.sublime-*
 **/bin/
-**/v14/
 **/node_modules/
 **/bower_components/
 **/*.min.cshtml
+**/v14/
+.vs/
 
 Core1Test.Presentation.App/wwwroot/js
 Core1Test.Presentation.App/wwwroot/css
