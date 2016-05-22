@@ -28,7 +28,8 @@
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel"
+    "web": "Microsoft.AspNet.Server.Kestrel --server.urls http://localhost:5000",
+    "kestrel": "Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5000"
   },
 
   "compilationOptions": {
@@ -39,6 +40,9 @@
     "dnx451": {
       "frameworkAssemblies": {
         "System.Net.Http": "4.0.0.0"
+      },
+      "dependencies": {
+        "Boilerplate.Web.Mvc6": "2.0.0-rc1-final-5"
       }
     },
     "dnxcore50": {

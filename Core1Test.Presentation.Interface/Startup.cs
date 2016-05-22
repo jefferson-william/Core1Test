@@ -2,7 +2,6 @@ namespace Core1Test.Presentation.Interface
 {
     using System.Reflection;
     using Boilerplate.Web.Mvc;
-    using Boilerplate.Web.Mvc.Razor;
     using Microsoft.AspNet.Builder;
     using Microsoft.AspNet.Hosting;
     using Microsoft.AspNet.Mvc.Razor;
@@ -11,6 +10,7 @@ namespace Core1Test.Presentation.Interface
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.PlatformAbstractions;
+    using Boilerplate.Web.Mvc.Razor;
 
     /// <summary>
     /// The main start-up class for the application.

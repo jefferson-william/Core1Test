@@ -5,3 +5,8 @@
 **/node_modules/
 **/bower_components/
 **/*.min.cshtml
+
+Core1Test.Presentation.App/wwwroot/js
+Core1Test.Presentation.App/wwwroot/css
+Core1Test.Presentation.App/wwwroot/fonts
+Core1Test.Presentation.App/wwwroot/_references.js

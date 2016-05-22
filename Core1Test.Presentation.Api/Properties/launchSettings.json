@@ -2,19 +2,18 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
       "launchUrl": "http://localhost:5000/api/values",
       "environmentVariables": {
         "Hosting:Environment": "Development"
       },
-      "sdkVersion": "dnx-clr-win-x86.1.0.0-rc1-final"
+      "sdkVersion": "dnx-clr-win-x86.1.0.0-rc1-update2"
     },
     "web": {
       "commandName": "web",
       "environmentVariables": {
         "Hosting:Environment": "Development"
       },
-      "sdkVersion": "dnx-clr-win-x86.1.0.0-rc1-final"
+      "sdkVersion": "dnx-clr-win-x86.1.0.0-rc1-update2"
     },
     "kestrel": {
       "commandName": "kestrel",
