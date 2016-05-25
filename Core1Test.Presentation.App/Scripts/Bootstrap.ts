@@ -153,8 +153,5 @@ require.config({
 require([
     'angular',
     'App',
-], function (ng: angular.IAngularStatic) {
-    angular.element(document).ready(() => {
-        angular.element('body').removeClass('hidden');
-    });
+], (ng: angular.IAngularStatic) => {
 });
