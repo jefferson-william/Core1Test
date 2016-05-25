@@ -93,8 +93,9 @@ require.config({
         angularAria: '/bower_components/angular-aria/angular-aria',
         angularMessages: '/bower_components/angular-messages/angular-messages',
         angularMaterial: '/bower_components/angular-material/angular-material',
-        SiteCss: '/css/Site',
-        Site: '/js/Site',
+        AppCss: '/css/App',
+        App: '/js/App',
+        BootstrapCss: '/css/Bootstrap',
         Bootstrap: '/js/Bootstrap',
     },
     shim: {
@@ -140,7 +141,7 @@ require.config({
         angularAria: { deps: ['angular'] },
         angularMessages: { deps: ['angular'] },
         angularMaterial: { deps: ['angular', 'angularAnimate', 'angularAria', 'angularMessages'] },
-        Site: { deps: ['angularMaterial', 'css!SiteCss'] },
+        App: { deps: ['angularMaterial', 'css!BootstrapCss', 'css!AppCss'] },
     }
 });
 
@@ -151,7 +152,9 @@ require.config({
 
 require([
     'angular',
-    'Site',
+    'App',
 ], function (ng: angular.IAngularStatic) {
-    ng.element('body').removeClass('hidden');
+    angular.element(document).ready(() => {
+        angular.element('body').removeClass('hidden');
+    });
 });

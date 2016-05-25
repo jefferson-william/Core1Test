@@ -29,6 +29,7 @@ var gulp = require('gulp'),
     project = require('./project.json'),
     sequence = require('gulp-sequence'),
     jscs = require('gulp-jscs'),
+    browserSync = require('browser-sync').create(),
     $ = require('gulp-load-plugins');
 
 var environment = {
@@ -90,6 +91,7 @@ var sources = {
     css: [
         {
             name: "angular-material.css",
+            concat: true,
             paths: [
                 paths.bower + "angular-material-sass-files/components/_autocomplete.scss",
                 paths.bower + "angular-material-sass-files/components/_backdrop.scss",
@@ -134,6 +136,12 @@ var sources = {
             paths: [
                 paths.styles + "site.scss"
             ]
+        },
+        {
+            name: "All",
+            paths: [
+                paths.styles + "**/*.scss"
+            ]
         }
     ],
     fonts: [
@@ -155,9 +163,9 @@ var sources = {
     ],
     ts: [
         {
-            name: "Bootstrap.js",
+            name: "All",
             paths: [
-                paths.scripts + "Bootstrap.ts",
+                paths.scripts + "**/*.ts",
             ]
         }
     ],
@@ -333,7 +341,7 @@ gulp.task('build-css', ['clean-css', 'lint-css'], function () {
                         'last 2 versions'
                     ]
                 }))
-                .pipe(concat(source.name))
+                .pipe(gulpif(source.concat, concat(source.name)))
                 .pipe(sizeBefore(source.name))
                 .pipe(gulpif(
                     !environment.isDevelopment(),
@@ -375,7 +383,7 @@ function () {
             .pipe(gulpif(
                 "**/*.ts",
                 typescript(getTypeScriptProject(source))))
-            .pipe(concat(source.name))
+            .pipe(gulpif(source.concat, concat(source.name)))
             .pipe(sizeBefore(source.name))
             .pipe(gulpif(
                 !environment.isDevelopment(),
@@ -386,7 +394,7 @@ function () {
                 sourcemaps.write(".")))
             .pipe(gulp.dest(paths.js));
     });
-    return merge(tasks);
+    return sequence(tasks);
 });
 
 gulp.task('build-html', ['clean-html'], function () {
@@ -457,7 +465,21 @@ gulp.task('watch-tests', function () {
         });
 });
 
-gulp.task('watch', ['watch-css', 'watch-js']);
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        notify: false,
+        port: 9000, 
+        ui: false,
+        server: {
+            baseDir: ['wwwroot', 'bower_components'],
+            routes: {
+                '/bower_components': 'bower_components'
+            }
+        }
+    });
+});
+
+gulp.task('watch', ['browser-sync', 'watch-css', 'watch-js']);
 
 function pageSpeed(strategy, cb) {
     if (siteUrl === undefined) {

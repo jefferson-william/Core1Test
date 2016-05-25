@@ -12,7 +12,8 @@
     "material": "https://github.com/angular/material.git#~1.0.8",
     "requirejs-plugins": "~1.0.3",
     "require-css": "~0.1.8",
-    "requirejs": "~2.2.0"
+    "requirejs": "~2.2.0",
+    "roboto-fontface": "^0.4.5"
   },
   "devDependencies": {
     "mocha": "2.4.5",
