@@ -1,5 +1,6 @@
 ﻿/// <reference path="../bower_components/DefinitelyTyped/requirejs/require.d.ts" />
 /// <reference path="../bower_components/DefinitelyTyped/angularjs/angular.d.ts" />
+/// <reference path="../Lib/DefinitelyTyped/Typed.d.ts" />
 
 require.config({
     paths: {
@@ -89,10 +90,25 @@ require.config({
         layout: '/bower_components/angular-material-sass-files/components/layout.scss',
         modernizr: '/bower_components/modernizr/src/Modernizr',
         angular: '/bower_components/angular/angular',
+        angularResource: '../bower_components/angular-resource/angular-resource',
+        angularSanitize: '../bower_components/angular-sanitize/angular-sanitize',
+        angularCookies: '../bower_components/angular-cookies/angular-cookies',
+        angularPortuguese: '../bower_components/angular-i18n/angular-locale_pt-br',
         angularAnimate: '/bower_components/angular-animate/angular-animate',
         angularAria: '/bower_components/angular-aria/angular-aria',
         angularMessages: '/bower_components/angular-messages/angular-messages',
+        angularUiRouter: '/bower_components/angular-ui-router/release/angular-ui-router',
+        angularAMD: '/bower_components/angularAMD/angularAMD',
+        ngload: '/bower_components/angularAMD/ngload',
         angularMaterial: '/bower_components/angular-material/angular-material',
+        uiRouterExtras: '../bower_components/ui-router-extras/release/ct-ui-router-extras',
+        uiRouterExtrasCore: '../bower_components/ui-router-extras/release/modular/ct-ui-router-extras.core',
+        uiRouterExtrasFuture: '../bower_components/ui-router-extras/release/modular/ct-ui-router-extras.future',
+        mdDataTable: '../bower_components/angular-material-data-table/dist/md-data-table',
+        mdDataTableCss: '../bower_components/angular-material-data-table/dist/md-data-table',
+        Lazyload: '/js/Lazyload',
+        Util: '/js/Util',
+        Route: '/js/Route',
         AppCss: '/css/App',
         App: '/js/App',
         BootstrapCss: '/css/Bootstrap',
@@ -140,8 +156,18 @@ require.config({
         angularAnimate: { deps: ['angular'] },
         angularAria: { deps: ['angular'] },
         angularMessages: { deps: ['angular'] },
-        angularMaterial: { deps: ['angular', 'angularAnimate', 'angularAria', 'angularMessages'] },
-        App: { deps: ['angularMaterial', 'css!BootstrapCss', 'css!AppCss'] },
+        angularResource: { deps: ['angular'] },
+        angularSanitize: { deps: ['angular'] },
+        angularCookies: { deps: ['angular'] },
+        angularPortuguese: { deps: ['angular'] },
+        angularUiRouter: { deps: ['angular'] },
+        angularAMD: { deps: ['angular'] },
+        ngload: { deps: ['angularAMD'] },
+        angularMaterial: { deps: ['angularResource', 'angularSanitize', 'angularAnimate', 'angularCookies', 'angularPortuguese', 'angularAria', 'angularMessages', 'angularUiRouter'] },
+        uiRouterExtrasCore: { deps: ['angular'] },
+        uiRouterExtrasFuture: { deps: ['uiRouterExtrasCore'] },
+        mdDataTable: { deps: ['angularMaterial', 'css!mdDataTableCss'] },
+        App: { deps: ['angularMaterial', 'angularAMD', 'uiRouterExtrasFuture', 'Lazyload', 'Util', 'Route', 'css!BootstrapCss', 'css!AppCss'] },
     }
 });
 
@@ -151,7 +177,12 @@ require.config({
 });
 
 require([
-    'angular',
-    'App',
-], (ng: angular.IAngularStatic) => {
+    'angularAMD',
+    'angularMaterial',
+], () => {
+    angular.element(document).ready(() => {
+        require([
+            'App',
+        ], () => {});
+    });
 });

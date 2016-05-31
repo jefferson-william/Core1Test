@@ -268,7 +268,7 @@ gulp.task('clean-js', function (cb) {
     return rimraf(paths.js, cb);
 });
 
-gulp.task('clean-html', function (cb) {
+gulp.task('clean-cshtml', function (cb) {
     return rimraf(paths.views + '**/*.min.cshtml', cb);
 });
 
@@ -369,7 +369,7 @@ gulp.task('build-fonts', ['clean-fonts'], function () {
     return merge(tasks);
 });
 
-gulp.task("build-js", sequence("clean-js", "compile-ts", "lint-js"));
+gulp.task("build-js", ["compile-ts", "lint-js"]);
 
 gulp.task("compile-ts", [],
 function () {
@@ -397,7 +397,7 @@ function () {
     return sequence(tasks);
 });
 
-gulp.task('build-html', ['clean-html'], function () {
+gulp.task('build-cshtml', ['clean-cshtml'], function () {
     return gulp
         .src(paths.views + '**/*.cshtml')
         .pipe(minifyCshtml())
@@ -410,7 +410,7 @@ gulp.task('build-html', ['clean-html'], function () {
 gulp.task('build', [
     'build-css',
     'build-fonts',
-    'build-html',
+    'build-cshtml',
     'build-js'
 ]);
 
