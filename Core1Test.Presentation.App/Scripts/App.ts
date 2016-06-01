@@ -8,7 +8,7 @@ define([
 	'Route',
 	'Lazyload',
 ], (
-	ng: angular.IAngularStatic,
+	angularAMD: any,
 	Util: Typed.IUtil,
 	Route: any,
 	Lazyload: Typed.ILazyload) => {
@@ -22,6 +22,10 @@ define([
         'ct.ui.router.extras.core', 'ct.ui.router.extras.future',
         'ngMaterial',
     ]);
+
+    app.bootstrap = () => {
+        angular.bootstrap(document, ['App']);
+    };
 
     /**
      * Configurações gerais ao inicializar a aplicação
@@ -100,7 +104,7 @@ define([
         $rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams, options): void => {
                 var $body, SetarClasseNomePaginaBody;
 
-                $body = angular.element('body');
+                $body = angular.element(document).find('body');
 
                 SetarClasseNomePaginaBody = (): void => {
                     $body.removeClass('hide');
@@ -114,5 +118,8 @@ define([
     };
     Runner.$inject = ['$rootScope', '$state'];
 
-	return ng.bootstrap(app);
+    app.config(Configuration);
+    app.run(Runner);
+
+	return angularAMD.bootstrap(app);
 });

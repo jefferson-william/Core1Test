@@ -20,7 +20,7 @@ define([
 
             Controller = <string | Function>args[args.length - 1];
 
-            fullState.controller = Controller;
+            fullState.controller = Controller || null;
             
             d.resolve(fullState);
         });

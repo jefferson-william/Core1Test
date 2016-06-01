@@ -106,13 +106,15 @@ require.config({
         uiRouterExtrasFuture: '../bower_components/ui-router-extras/release/modular/ct-ui-router-extras.future',
         mdDataTable: '../bower_components/angular-material-data-table/dist/md-data-table',
         mdDataTableCss: '../bower_components/angular-material-data-table/dist/md-data-table',
+        BootstrapCss: '/css/Bootstrap',
+        Bootstrap: '/js/Bootstrap',
         Lazyload: '/js/Lazyload',
         Util: '/js/Util',
         Route: '/js/Route',
         AppCss: '/css/App',
         App: '/js/App',
-        BootstrapCss: '/css/Bootstrap',
-        Bootstrap: '/js/Bootstrap',
+        HeaderController: '/js/Controller/Header',
+        FooterController: '/js/Controller/Footer',
     },
     shim: {
         autocomplete: { deps: ['angularMaterial', 'css!autocompleteCss'] },
@@ -168,6 +170,8 @@ require.config({
         uiRouterExtrasFuture: { deps: ['uiRouterExtrasCore'] },
         mdDataTable: { deps: ['angularMaterial', 'css!mdDataTableCss'] },
         App: { deps: ['angularMaterial', 'angularAMD', 'uiRouterExtrasFuture', 'Lazyload', 'Util', 'Route', 'css!BootstrapCss', 'css!AppCss'] },
+        HeaderController: { deps: ['App'] },
+        FooterController: { deps: ['App'] },
     }
 });
 
