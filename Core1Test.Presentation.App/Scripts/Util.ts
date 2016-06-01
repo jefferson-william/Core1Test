@@ -15,10 +15,11 @@ define([
         var d = $q.defer();
 
         require(futureState.dependencies, (...args: any[]): void => {
-            var fullState = <Typed.Ui.IState>futureState;
-            var Controller: string | Function;
+            let fullState = <Typed.Ui.IState>futureState;
+            let Controller: string;
 
-            Controller = <string | Function>args[args.length - 1];
+            Controller = args[args.length - 1];
+            Controller = Controller && Controller.search('Controller') !== 1 ? Controller : null;
 
             fullState.controller = Controller || null;
             

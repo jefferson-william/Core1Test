@@ -29,14 +29,10 @@ define((): void => {
         {
             name: 'Layout.ValuesIndex',
             url: '/values/',
+            templateUrl: '/partials/values/index.html',
+            controller: './ValuesIndexController',
+            controllerAs: 'ValuesIndex',
             dependencies: ['ValuesIndexController'],
-            views: {
-                'Body@Layout': {
-                    templateUrl: '/partials/values/index.html',
-                    controller: 'ValuesIndexController',
-                    controllerAs: 'ValuesIndex',
-                }
-            }
         }
     ];
 

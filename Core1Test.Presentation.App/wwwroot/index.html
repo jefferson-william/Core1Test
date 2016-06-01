@@ -9,5 +9,11 @@
 	<div ng-view="Layout"></div>
     <script src="/bower_components/requirejs/require.js"></script>
     <script src="/js/Bootstrap.js"></script>
+    <p>{{$id}}</p>
+	<div ui-view="Header"></div>
+	<div ui-view>
+		<p>{{$id}}</p>
+	</div>
+	<div ui-view="Footer"></div>
 </body>
 </html>

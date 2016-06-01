@@ -13,9 +13,8 @@ define([
 	Route: any,
 	Lazyload: Typed.ILazyload) => {
 
-	var app: any,
-		Configuration: Function,
-		Runner: Function;
+	var app: any, bootstrap: any,
+		Configuration: Function, Runner: Function;
 
 	app = angular.module('App', [
         'ngLocale', 'ngResource', 'ngAria', 'ngAnimate', 'ngSanitize', 'ngMessages', 'ngCookies',
@@ -117,5 +116,8 @@ define([
     app.config(Configuration);
     app.run(Runner);
 
-	return angularAMD.bootstrap(app);
+	bootstrap = angularAMD.bootstrap(app)
+        .catch(function(e) { console.error(1, e); });
+
+    return;
 });
