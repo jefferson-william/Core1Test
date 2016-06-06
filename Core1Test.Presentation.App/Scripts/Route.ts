@@ -11,41 +11,32 @@ define((): void => {
             url: '/',
             dependencies: ['HeaderController', 'FooterController'],
             views: {
-                'Header': {
+                'Layout': {
+                    templateUrl: '/partials/Layout.html',
+                },
+                'Header@Layout': {
                     templateUrl: '/partials/Header.html',
                     controller: 'HeaderController',
                     controllerAs: 'Header',
                 },
-                'Footer': {
+                'Footer@Layout': {
                     templateUrl: '/partials/Footer.html',
                     controller: 'FooterController',
                     controllerAs: 'Footer',
                 }
             }
         },
-        // {
-        //     name: 'Header',
-        //     url: '/',
-        //     templateUrl: '/partials/Header.html',
-        //     controller: './HeaderController',
-        //     controllerAs: 'Header',
-        //     dependencies: ['./HeaderController'],
-        // },
-        // {
-        //     name: 'Footer',
-        //     url: '/',
-        //     templateUrl: '/partials/Footer.html',
-        //     controller: './FooterController',
-        //     controllerAs: 'Footer',
-        //     dependencies: ['./FooterController'],
-        // },
         {
-            name: 'ValuesIndex',
+            name: 'Layout.ValuesIndex',
             url: '/values/',
-            templateUrl: '/partials/values/index.html',
-            controller: './ValuesIndexController',
-            controllerAs: 'ValuesIndex',
-            dependencies: ['./ValuesIndexController'],
+            dependencies: ['ValuesIndexController'],
+            views: {
+                'Body@Layout': {
+                    templateUrl: '/partials/values/index.html',
+                    controller: 'ValuesIndexController',
+                    controllerAs: 'ValuesIndex',
+                }
+            }
         }
     ];
 

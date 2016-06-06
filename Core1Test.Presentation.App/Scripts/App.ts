@@ -72,10 +72,6 @@ define([
         $futureStateProvider.addResolve(Util.LoadAndRegisterFutureStates);
         
         $locationProvider.html5Mode(true);
-        // $locationProvider.html5Mode({
-        //     enabled: false,
-        //     requireBase: false
-        // });
 
         $mdThemingProvider.theme('default').primaryPalette('teal').accentPalette('teal');
     };
