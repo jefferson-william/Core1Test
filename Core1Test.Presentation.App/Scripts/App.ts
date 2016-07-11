@@ -117,7 +117,6 @@ define([
     app.run(Runner);
 
 	bootstrap = angularAMD.bootstrap(app)
-        .catch(function(e) { console.error(1, e); });
 
-    return;
+    return bootstrap;
 });
