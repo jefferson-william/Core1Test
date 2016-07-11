@@ -38,7 +38,6 @@ define((): void => {
 
     for (originalPath in Route) {
         route = Route[originalPath];
-        route.type = 'requireCtrl';
     }
 
     return Route;

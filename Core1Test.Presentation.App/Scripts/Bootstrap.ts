@@ -165,11 +165,11 @@ require.config({
         angularUiRouter: { deps: ['angular'] },
         angularAMD: { deps: ['angular'] },
         ngload: { deps: ['angularAMD'] },
-        angularMaterial: { deps: ['angularResource', 'angularSanitize', 'angularAnimate', 'angularCookies', 'angularPortuguese', 'angularAria', 'angularMessages', 'angularUiRouter'] },
+        angularMaterial: { deps: ['angularResource', 'angularSanitize', 'angularAnimate', 'angularCookies', 'angularPortuguese', 'angularAria', 'angularMessages'] },
         uiRouterExtrasCore: { deps: ['angular'] },
         uiRouterExtrasFuture: { deps: ['uiRouterExtrasCore'] },
         mdDataTable: { deps: ['angularMaterial', 'css!mdDataTableCss'] },
-        App: { deps: ['angularMaterial', 'angularAMD', 'uiRouterExtrasFuture', 'Lazyload', 'Util', 'Route', 'css!BootstrapCss', 'css!AppCss'] },
+        App: { deps: ['angularMaterial', 'angularAMD', 'angularUiRouter', 'Lazyload', 'Util', 'Route', 'css!BootstrapCss', 'css!AppCss'] },
         HeaderController: { deps: ['App'] },
         FooterController: { deps: ['App'] },
     }

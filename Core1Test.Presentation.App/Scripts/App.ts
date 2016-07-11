@@ -18,7 +18,7 @@ define([
 
 	app = angular.module('App', [
         'ngLocale', 'ngResource', 'ngAria', 'ngAnimate', 'ngSanitize', 'ngMessages', 'ngCookies',
-        'ct.ui.router.extras.core', 'ct.ui.router.extras.future',
+        'ui.router',
         'ngMaterial',
     ]);
 
@@ -31,7 +31,6 @@ define([
      */
     Configuration = (
         $stateProvider: Typed.UiExtras.IStateProvider,
-        $futureStateProvider: Typed.UiExtras.IFutureStateProvider,
         $urlRouterProvider: angular.ui.IUrlRouterProvider,
         $locationProvider: angular.ILocationProvider,
         $controllerProvider: angular.IControllerProvider,
@@ -58,23 +57,16 @@ define([
         // Adicionar alguns Providers no objeto Lazyload para serem usados futuramente
         Lazyload.Set({
             '$stateProvider': $stateProvider,
-            '$futureStateProvider': $futureStateProvider
         });
 
         // Redirecionar para a url inicial caso a url informada não tenha sido configurada/não exista
         $urlRouterProvider.otherwise('/');
 
-        $futureStateProvider.stateFactory('ngload', Util.NgLoadStateFactory);
-        $futureStateProvider.stateFactory('iframe', Util.IframeStateFactory);
-        $futureStateProvider.stateFactory('requireCtrl', Util.RequireCtrlStateFactory);
-
-        $futureStateProvider.addResolve(Util.LoadAndRegisterFutureStates);
-        
         $locationProvider.html5Mode(true);
 
         $mdThemingProvider.theme('default').primaryPalette('teal').accentPalette('teal');
     };
-    Configuration.$inject = ['$stateProvider', '$futureStateProvider', '$urlRouterProvider',
+    Configuration.$inject = ['$stateProvider', '$urlRouterProvider',
         '$locationProvider', '$controllerProvider', '$provide', '$filterProvider', '$compileProvider',
         '$mdThemingProvider'];
 
