@@ -169,6 +169,7 @@ require.config({
         uiRouterExtrasCore: { deps: ['angular'] },
         uiRouterExtrasFuture: { deps: ['uiRouterExtrasCore'] },
         mdDataTable: { deps: ['angularMaterial', 'css!mdDataTableCss'] },
+        Route: { deps: ['Lazyload'] },
         App: { deps: ['angularMaterial', 'angularAMD', 'angularUiRouter', 'Lazyload', 'Util', 'Route', 'css!BootstrapCss', 'css!AppCss'] },
         HeaderController: { deps: ['App'] },
         FooterController: { deps: ['App'] },

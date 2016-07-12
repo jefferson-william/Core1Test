@@ -1,13 +1,14 @@
 /// <reference path="../bower_components/DefinitelyTyped/requirejs/require.d.ts" />
 /// <reference path="../Lib/DefinitelyTyped/Typed.d.ts" />
 
-define((): void => {
+define([
+    'Lazyload'
+], (Lazyload: Typed.ILazyload): void => {
     var Route, originalPath, route;
 
     // Definir todas as rotas
-    Route = [
-        {
-            name: 'Layout',
+    Route = {
+        'Layout': {
             url: '/',
             dependencies: ['HeaderController', 'FooterController'],
             views: {
@@ -26,19 +27,29 @@ define((): void => {
                 }
             }
         },
-        {
-            name: 'Layout.ValuesIndex',
+        'Layout.ValuesIndex': {
             url: '/values/',
             templateUrl: '/partials/values/index.html',
             controller: './ValuesIndexController',
             controllerAs: 'ValuesIndex',
             dependencies: ['ValuesIndexController'],
         }
-    ];
+    };
 
-    for (originalPath in Route) {
-        route = Route[originalPath];
-    }
+    Route.StateValidar = (state: any): boolean => {
+        return typeof state == 'object' && (state.url || state.views || state.controller) ? true : false;
+    };
+
+    Route.SetarTodas = (): void => {
+        var name: string,
+            state: any;
+
+        for (name in Route) {
+            state = Route[name];
+
+            Route.StateValidar(state) && Lazyload.$stateProvider.state(name, state);
+        }
+    };
 
     return Route;
 });

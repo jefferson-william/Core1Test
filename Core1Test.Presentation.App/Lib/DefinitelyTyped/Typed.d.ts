@@ -16,7 +16,7 @@ declare module Typed.UiExtras {
     interface IStateProvider {
         $get(): Function;
         decorator(name: string, func: Function): Function;
-        state(): Function;
+        state(name: string, routeObject: {}): Function;
     }
 }
 

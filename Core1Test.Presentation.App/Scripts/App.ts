@@ -62,6 +62,8 @@ define([
         // Redirecionar para a url inicial caso a url informada não tenha sido configurada/não exista
         $urlRouterProvider.otherwise('/');
 
+        Route.SetarTodas();
+
         $locationProvider.html5Mode(true);
 
         $mdThemingProvider.theme('default').primaryPalette('teal').accentPalette('teal');
