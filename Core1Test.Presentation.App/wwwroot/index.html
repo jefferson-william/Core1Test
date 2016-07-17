@@ -3,12 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <title>Core1Test</title>
-</head>
-<body>
-	<base href="/">
-	<div ng-view="Layout"></div>
     <script src="/bower_components/requirejs/require.js"></script>
     <script src="/js/Bootstrap.js"></script>
+    <style>
+    	body {
+    		visibility: hidden;
+    	}
+    </style>
+</head>
+<body ng-cloak>
+	<base href="/">
+	<div ng-view="Layout"></div>
     <p>{{$id}}</p>
 	<div ui-view="Header"></div>
 	<div ui-view>
