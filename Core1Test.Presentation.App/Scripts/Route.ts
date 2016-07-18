@@ -11,6 +11,21 @@ define([
         'Layout': {
             url: '/',
             dependencies: ['HeaderController', 'FooterController'],
+            resolve: {
+                dependencies: ['$q', ($q): void => {
+                    var deferred;
+
+                    deferred = $q.defer();
+
+                    require(['angularAMD', '$rootScope', 'HeaderController', 'FooterController'], (angularAMD, $rootScope): void => {
+                        deferred.resolve();
+                        $rootScope.$apply();
+                        angularAMD.processQueue();
+                    });
+
+                    return deferred.promise;
+                }]
+            },
             views: {
                 'Layout': {
                     templateUrl: '/partials/Layout.html',

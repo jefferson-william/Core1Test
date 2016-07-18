@@ -3,10 +3,18 @@
 /// <reference path="../../Lib/DefinitelyTyped/Typed.d.ts" />
 
 define([
+	'angularAMD',
 	'App',
-], (app: any) => {
+], (angularAMD, app) => {
+	var controller;
 
-	app.controller('HeaderController', () => {
+	controller = angularAMD.controller('HeaderController', () => {
+		console.log('HeaderController');
 	});
 
+	angularAMD.processQueue();
+
+	console.log(1);
+
+	return controller;
 });
