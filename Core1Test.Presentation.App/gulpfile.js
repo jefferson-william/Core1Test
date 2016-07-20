@@ -32,6 +32,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     $ = require('gulp-load-plugins');
 
+var extAll = '{js,html,css,png,jpg,gif}';
 var environment = {
     development: 'Development',
     staging: 'Staging',
@@ -255,6 +256,17 @@ function sizeAfter(title) {
         title: 'After: ' + title
     });
 }
+
+gulp.task('generate-service-worker', function(callback) {
+    var path = require('path');
+    var swPrecache = require('sw-precache');
+    var rootDir = 'wwwroot';
+
+    swPrecache.write(path.join(rootDir, 'sw.js'), {
+        staticFileGlobs: [rootDir + '/**/*.' + extAll, 'bower_components/**/*.' + extAll],
+        stripPrefix: rootDir + '/'
+    }, callback);
+});
 
 gulp.task('clean-css', function (cb) {
     return rimraf(paths.css, cb);
@@ -510,6 +522,7 @@ gulp.task(
     'default',
     [
         'build',
+        'generate-service-worker',
         'test',
         'watch'
     ]);
