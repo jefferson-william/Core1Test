@@ -391,7 +391,7 @@ function () {
             .pipe(sizeAfter(source.name))
             .pipe(gulpif(
                 environment.isDevelopment(),
-                sourcemaps.write(".")))
+                sourcemaps.write({ sourceRoot: '/Scripts/' })))
             .pipe(gulp.dest(paths.js));
     });
     return sequence(tasks);
@@ -471,7 +471,7 @@ gulp.task('browser-sync', function() {
         port: 9000, 
         ui: false,
         server: {
-            baseDir: ['wwwroot', 'bower_components'],
+            baseDir: ['wwwroot', 'bower_components', '/Scripts'],
             routes: {
                 '/bower_components': 'bower_components'
             }
