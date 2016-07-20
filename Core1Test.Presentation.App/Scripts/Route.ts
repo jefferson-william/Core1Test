@@ -27,10 +27,11 @@ define([
                 }
             }
         },
-        'Layout.ValuesIndex': {
-            url: '/values/',
+        'ValuesIndex': {
+            url: 'values/',
+            parent: 'Layout',
             templateUrl: '/partials/values/index.html',
-            controller: './ValuesIndexController',
+            controller: 'ValuesIndexController',
             controllerAs: 'ValuesIndex',
             dependencies: ['ValuesIndexController'],
         }
