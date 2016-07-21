@@ -1,10 +1,18 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
-    <title>sdf</title>
+    <title>Core1Test</title>
+    <script src="/bower_components/requirejs/require.js"></script>
+    <script src="/js/Bootstrap.js"></script>
+    <style>
+    	body {
+    		visibility: hidden;
+    	}
+    </style>
 </head>
-<body>
-    sdf
+<body ng-cloak>
+    <base href="/">
+	<div ui-view="Layout"></div>
 </body>
 </html>

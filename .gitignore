@@ -1,3 +1,4 @@
+.vs/
 *.sublime-*
 **/*.sublime-*
 **/bin/
@@ -6,6 +7,7 @@
 **/*.min.cshtml
 .vs
 
+Core1Test.Presentation.App/wwwroot/sw.js
 Core1Test.Presentation.App/wwwroot/js
 Core1Test.Presentation.App/wwwroot/css
 Core1Test.Presentation.App/wwwroot/fonts
