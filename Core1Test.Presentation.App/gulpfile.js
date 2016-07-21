@@ -268,6 +268,10 @@ gulp.task('generate-service-worker', function(callback) {
     }, callback);
 });
 
+gulp.task('requirejs-sw', function (cb) {
+    return $.requirejsSw();
+});
+
 gulp.task('clean-css', function (cb) {
     return rimraf(paths.css, cb);
 });
