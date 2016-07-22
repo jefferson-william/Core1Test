@@ -1,6 +1,11 @@
 {
   "name": "Core1Test.Presentation.App",
   "version": "0.0.0",
+  "scripts": {
+    "debug-mocha": "iron-node node_modules/mocha/bin/_mocha",
+    "debug-grunt": "iron-node node_modules/grunt-cli/bin/grunt build",
+    "debug-gulp": "iron-node node_modules/gulp/bin/gulp.js"
+  },
   "devDependencies": {
     "browser-sync": "^2.12.8",
     "gulp": "3.9.1",

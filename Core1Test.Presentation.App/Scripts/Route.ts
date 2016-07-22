@@ -27,13 +27,13 @@ define([
                 }
             }
         },
-        'ValuesIndex': {
-            url: 'values/',
+        'LoginIndex': {
+            url: 'login/',
             parent: 'Layout',
-            templateUrl: '/partials/values/index.html',
-            controller: 'ValuesIndexController',
-            controllerAs: 'ValuesIndex',
-            dependencies: ['ValuesIndexController'],
+            templateUrl: '/partials/login/index.html',
+            controller: 'LoginIndexController',
+            controllerAs: 'LoginIndex',
+            dependencies: ['LoginIndexController'],
         }
     };
 

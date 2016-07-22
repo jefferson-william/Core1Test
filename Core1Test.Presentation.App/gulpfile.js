@@ -269,7 +269,9 @@ gulp.task('generate-service-worker', function(callback) {
 });
 
 gulp.task('requirejs-sw', function (cb) {
-    return $.requirejsSw();
+    requirejsSw = require('gulp-requirejs-sw');
+    debugger;
+    return requirejsSw(cb);
 });
 
 gulp.task('clean-css', function (cb) {

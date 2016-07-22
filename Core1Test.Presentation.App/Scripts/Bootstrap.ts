@@ -115,7 +115,7 @@ require.config({
         App: '/js/App',
         HeaderController: '/js/Controller/Header',
         FooterController: '/js/Controller/Footer',
-        ValuesIndexController: '/js/Controller/Values/Index',
+        LoginIndexController: '/js/Controller/Login/Index',
     },
     shim: {
         autocomplete: { deps: ['angularMaterial', 'css!autocompleteCss'] },
@@ -174,7 +174,7 @@ require.config({
         App: { deps: ['angularMaterial', 'angularAMD', 'angularUiRouter', 'Lazyload', 'Util', 'Route', 'css!BootstrapCss', 'css!AppCss'] },
         HeaderController: { deps: ['App'] },
         FooterController: { deps: ['App'] },
-        ValuesIndexController: { deps: ['App'] },
+        LoginIndexController: { deps: ['App'] },
     }
 });
 
