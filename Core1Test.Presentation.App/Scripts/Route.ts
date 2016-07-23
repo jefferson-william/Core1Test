@@ -10,10 +10,12 @@ define([
     Route = {
         'Layout': {
             url: '/',
-            dependencies: ['HeaderController', 'FooterController'],
+            dependencies: ['LayoutController', 'HeaderController', 'FooterController'],
             views: {
-                'Layout': {
+                '': {
                     templateUrl: '/partials/Layout.html',
+                    controller: 'LayoutController',
+                    controllerAs: 'Layout',
                 },
                 'Header@Layout': {
                     templateUrl: '/partials/Header.html',
@@ -27,13 +29,19 @@ define([
                 }
             }
         },
-        'LoginIndex': {
+        'LayoutLogin': {
             url: 'login/',
-            parent: 'Layout',
-            templateUrl: '/partials/login/index.html',
-            controller: 'LoginIndexController',
-            controllerAs: 'LoginIndex',
             dependencies: ['LoginIndexController'],
+            views: {
+                '': {
+                    templateUrl: '/partials/Login/Layout.html',
+                },
+                'FormLogin': {
+                    templateUrl: '/partials/Login/Index.html',
+                    controller: 'LoginIndexController',
+                    controllerAs: 'LoginIndex',
+                }
+            }
         }
     };
 

@@ -77,7 +77,8 @@ define([
      */
     Runner = (
         $rootScope: angular.IRootScopeService,
-        $state: angular.ui.IStateService): void => {
+        $state: angular.ui.IStateService,
+        IdentificacaoService: IIdentificacao): void => {
 
         Lazyload.$state = $state;
 
@@ -87,25 +88,30 @@ define([
             toParams: {},
             fromState: Typed.Ui.IState,
             fromParams: {},
-            options: angular.ui.IStateOptions): void => {}
-        );
+            options: angular.ui.IStateOptions): void => {
+
+            if (!IdentificacaoService.Autenticacao.Autenticado && !(fromState.name === 'LayoutLogin' || toState.name === 'LayoutLogin')) {
+                event.preventDefault();
+
+                $state.go('LayoutLogin');
+            }
+        });
 
         $rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams, options): void => {
-                var $body, SetarClasseNomePaginaBody;
+            var $body, SetarClasseNomePaginaBody;
 
-                $body = angular.element(document).find('body');
+            $body = angular.element(document).find('body');
 
-                SetarClasseNomePaginaBody = (): void => {
-                    $body.removeClass('hide');
+            SetarClasseNomePaginaBody = (): void => {
+                $body.removeClass('hide');
 
-                    toState.controllerAs && $body.removeClass(fromState.controllerAs).addClass('Page ' + toState.controllerAs);
-                };
-                
-                SetarClasseNomePaginaBody();
-            }
-        );
+                toState.controllerAs && $body.removeClass(fromState.controllerAs).addClass('Page ' + toState.controllerAs);
+            };
+            
+            SetarClasseNomePaginaBody();
+        });
     };
-    Runner.$inject = ['$rootScope', '$state'];
+    Runner.$inject = ['$rootScope', '$state', 'IdentificacaoService'];
 
     app.config(Configuration);
     app.run(Runner);

@@ -6,7 +6,7 @@ define([
 	'App',
 ], (app: any) => {
 
-	app.controller('FooterController', () => {
-	});
+	app.controller('FooterController', [() => {
+	}]);
 
 });

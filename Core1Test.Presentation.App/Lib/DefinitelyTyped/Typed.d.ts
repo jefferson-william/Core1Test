@@ -9,15 +9,11 @@ declare module 'Typed' {
 interface IIdentificacao {
     Login: ILogin;
     Autenticacao: IAutenticacao;
-    TratarEntradaDeDadosNoConstrutor(): void;
 }
 
 interface IAutenticacao {
     Autenticado: boolean;
     Autenticar(LoginModel: ILoginModel): ILoginModel;
-    ValidarSenha(LoginModel: ILoginModel): ILoginModel;
-    ValidarDadosBasicos(LoginModel: ILoginModel): ILoginModel;
-    SetarAutenticado(LoginModel: ILoginModel): void;
 }
 
 interface ILogin {
@@ -26,7 +22,7 @@ interface ILogin {
 }
 
 interface ILoginModel {
-    Login: string;
+    Email: string;
     Senha?: string;
 }
 

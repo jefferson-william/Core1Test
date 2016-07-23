@@ -1,10 +1,14 @@
-/// <reference path="../bower_components/DefinitelyTyped/requirejs/require.d.ts" />
-/// <reference path="../bower_components/DefinitelyTyped/angularjs/angular.d.ts" />
-/// <reference path="../Lib/DefinitelyTyped/Typed.d.ts" />
+/// <reference path="../../bower_components/DefinitelyTyped/requirejs/require.d.ts" />
+/// <reference path="../../bower_components/DefinitelyTyped/angularjs/angular.d.ts" />
+/// <reference path="../../Lib/DefinitelyTyped/Typed.d.ts" />
 
 define([
-	'app',
-], (app: angular.IModule) => {
+	'angularAMD',
+	'Lazyload',
+], (
+	app: angular.IModule,
+	Lazyload: Typed.ILazyload) => {
+	
 	let IdentificacaoService;
 
 	class Autenticacao implements IAutenticacao {
@@ -24,16 +28,19 @@ define([
 			return LoginModel;
 		}
 
-		public ValidarSenha(LoginModel: ILoginModel): ILoginModel {
-			if (LoginModel.Senha !== LoginModel.Login[0]) {
+		private ValidarSenha(LoginModel: ILoginModel): ILoginModel {
+			if (LoginModel.Senha !== LoginModel.Email[0]) {
 				LoginModel.Senha = null;
 			}
 			this.SetarAutenticado(LoginModel);
 			return LoginModel;
 		}
 
-		public ValidarDadosBasicos(LoginModel: ILoginModel): ILoginModel {
-			if (LoginModel.Login === '' || LoginModel.Senha === '') {
+		private ValidarDadosBasicos(LoginModel: ILoginModel): ILoginModel {
+			if (!LoginModel) {
+				LoginModel = { Email: '', Senha: '' };
+			}
+			if (LoginModel.Email === '' || LoginModel.Senha === '') {
 				LoginModel = null;
 			}
 			this.SetarAutenticado(LoginModel);
@@ -63,12 +70,12 @@ define([
 			this.TratarEntradaDeDadosNoConstrutor();
 		}
 
-		public TratarEntradaDeDadosNoConstrutor(): void {
+		private TratarEntradaDeDadosNoConstrutor(): void {
 			this.Login = new Login(this.Autenticacao);
 		}
 	}
 
-	IdentificacaoService = app.service('IdentificacaoService', (): {} => {
+	IdentificacaoService = app.factory('IdentificacaoService', (): {} => {
 		let autenticacao = new Autenticacao();
 		let login: ILogin = new Login(autenticacao);
 

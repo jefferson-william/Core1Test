@@ -528,7 +528,6 @@ gulp.task(
     'default',
     [
         'build',
-        'generate-service-worker',
         'test',
         'watch'
     ]);
