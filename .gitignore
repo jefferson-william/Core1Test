@@ -5,6 +5,7 @@
 **/node_modules/
 **/bower_components/
 **/*.min.cshtml
+**/*.log
 .vs
 
 Core1Test.Presentation.App/wwwroot/sw.js

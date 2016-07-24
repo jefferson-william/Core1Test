@@ -19,7 +19,7 @@ define([
 	app = angular.module('App', [
         'ngLocale', 'ngResource', 'ngAria', 'ngAnimate', 'ngSanitize', 'ngMessages', 'ngCookies',
         'ui.router',
-        'ngMaterial',
+        'material.core',
     ]);
 
     app.bootstrap = () => {
@@ -64,7 +64,7 @@ define([
 
         Route.SetarTodas();
 
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(false);
 
         $mdThemingProvider.theme('default').primaryPalette('teal').accentPalette('teal');
     };
