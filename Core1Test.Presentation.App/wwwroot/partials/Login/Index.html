@@ -1,10 +1,16 @@
-<form name="LoginForm">
-	<md-input-container>
-		<label>E-mail</label>
-		<input type="text" ng-model="Login.Email">
-	</md-input-container>
-	<md-input-container>
-		<label>Senha</label>
-		<input type="text" ng-model="Login.Senha">
-	</md-input-container>
+<form name="LoginForm" md-whiteframe="3">
+	<div layout="column">
+		<div flex="">
+			<md-input-container>
+				<label>E-mail</label>
+				<input type="text" ng-model="Login.Email">
+			</md-input-container>
+		</div>
+		<div flex="">
+			<md-input-container>
+				<label>Senha</label>
+				<input type="text" ng-model="Login.Senha">
+			</md-input-container>
+		</div>
+	</div>
 </form>

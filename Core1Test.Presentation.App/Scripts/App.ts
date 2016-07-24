@@ -105,7 +105,7 @@ define([
             SetarClasseNomePaginaBody = (): void => {
                 $body.removeClass('hide');
 
-                toState.controllerAs && $body.removeClass(fromState.controllerAs).addClass('Page ' + toState.controllerAs);
+                toState.name && $body.removeClass(fromState.name).addClass('Page ' + toState.name);
             };
             
             SetarClasseNomePaginaBody();

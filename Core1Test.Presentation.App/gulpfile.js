@@ -471,6 +471,11 @@ gulp.task('watch-js', function () {
         });
 });
 
+gulp.task('watch-html', function () {
+    return gulp.watch(paths.partials + '**/*.html')
+        .on('change', browserSync.reload);
+});
+
 gulp.task('watch-tests', function () {
     return gulp
         .watch([
@@ -497,7 +502,7 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('watch', ['browser-sync', 'watch-css', 'watch-js']);
+gulp.task('watch', ['browser-sync', 'watch-css', 'watch-js', 'watch-html']);
 
 function pageSpeed(strategy, cb) {
     if (siteUrl === undefined) {

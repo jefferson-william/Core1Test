@@ -94,6 +94,7 @@ require.config({
         virtualRepeaterCss: '/bower_components/angular-material/modules/closure/virtualRepeater/virtualRepeater',
         whiteframeCss: '/bower_components/angular-material/modules/closure/whiteframe/whiteframe',
         layoutCss: '/bower_components/angular-material/modules/layouts/angular-material.layouts',
+        angularMaterialCoreCss: '/bower_components/angular-material/modules/js/core/core',
         modernizr: '/bower_components/modernizr/src/Modernizr',
         angular: '/bower_components/angular/angular',
         angularResource: '../bower_components/angular-resource/angular-resource',
@@ -124,6 +125,7 @@ require.config({
         HeaderController: '/js/Controller/Header',
         FooterController: '/js/Controller/Footer',
         LoginIndexController: '/js/Controller/Login/Index',
+        LoginIndexCss: '/css/Login/Index',
     },
     shim: {
         autocomplete: { deps: ['angularMaterialCore', 'css!autocompleteCss'] },
@@ -165,7 +167,7 @@ require.config({
         virtualRepeat: { deps: ['angularMaterialCore', 'css!virtualRepeatCss'] },
         whiteframe: { deps: ['angularMaterialCore', 'css!whiteframeCss'] },
         animateCss: { deps: ['angularAMD'] },
-        layout: { deps: ['angularAMD', 'css!layoutCss'] },
+        layout: { deps: ['angularAMD'] },
         gestures: { deps: ['angularAMD'] },
         theming: { deps: ['angularAMD'] },
         angularAnimate: { deps: ['angular'] },
@@ -178,7 +180,7 @@ require.config({
         angularUiRouter: { deps: ['angular'] },
         angularAMD: { deps: ['angular'] },
         ngload: { deps: ['angularAMD'] },
-        angularMaterialCore: { deps: ['animateCss', 'layout', 'gestures', 'theming', 'angularResource', 'angularSanitize', 'angularAnimate', 'angularCookies', 'angularPortuguese', 'angularAria', 'angularMessages'] },
+        angularMaterialCore: { deps: ['animateCss', 'layout', 'gestures', 'theming', 'angularResource', 'angularSanitize', 'angularAnimate', 'angularCookies', 'angularPortuguese', 'angularAria', 'angularMessages', 'css!angularMaterialCoreCss'] },
         uiRouterExtrasCore: { deps: ['angular'] },
         uiRouterExtrasFuture: { deps: ['uiRouterExtrasCore'] },
         mdDataTable: { deps: ['angularMaterialCore', 'css!mdDataTableCss'] },
@@ -188,7 +190,7 @@ require.config({
         LayoutController: { deps: ['App'] },
         HeaderController: { deps: ['App'] },
         FooterController: { deps: ['App'] },
-        LoginIndexController: { deps: ['App', 'input'] },
+        LoginIndexController: { deps: ['App', 'input', 'whiteframe', 'css!LoginIndexCss'] },
     }
 });
 
