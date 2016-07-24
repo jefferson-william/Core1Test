@@ -11,7 +11,7 @@ define([
 	
 	let IdentificacaoService;
 
-	class Autenticacao implements IAutenticacao {
+	class Autenticacao implements IAutenticacaoClass {
 		public Autenticado: boolean = false;
 
 		public SetarAutenticado(LoginModel: ILoginModel): void {
@@ -48,10 +48,10 @@ define([
 		};
 	}
 
-	class Login implements ILogin {
-		public Autenticacao: IAutenticacao;
+	class Login implements ILoginClass {
+		public Autenticacao: IAutenticacaoClass;
 
-		constructor(Autenticacao: IAutenticacao) {
+		constructor(Autenticacao: IAutenticacaoClass) {
 			this.Autenticacao = Autenticacao;
 		}
 
@@ -59,11 +59,11 @@ define([
 		}
 	}
 
-	class Identificacao implements IIdentificacao {
-		public Login: ILogin;
-		public Autenticacao: IAutenticacao;
+	class Identificacao implements IIdentificacaoClass {
+		public Login: ILoginClass;
+		public Autenticacao: IAutenticacaoClass;
 
-		constructor(Login: ILogin, Autenticacao: IAutenticacao) {
+		constructor(Login: ILoginClass, Autenticacao: IAutenticacaoClass) {
 			this.Login = Login;
 			this.Autenticacao = Autenticacao;
 
@@ -77,7 +77,7 @@ define([
 
 	IdentificacaoService = app.factory('IdentificacaoService', (): {} => {
 		let autenticacao = new Autenticacao();
-		let login: ILogin = new Login(autenticacao);
+		let login: ILoginClass = new Login(autenticacao);
 
 		return new Identificacao(login, autenticacao);
 	});

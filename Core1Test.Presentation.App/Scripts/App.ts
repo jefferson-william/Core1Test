@@ -78,7 +78,7 @@ define([
     Runner = (
         $rootScope: angular.IRootScopeService,
         $state: angular.ui.IStateService,
-        IdentificacaoService: IIdentificacao): void => {
+        IdentificacaoService: IIdentificacaoClass): void => {
 
         Lazyload.$state = $state;
 

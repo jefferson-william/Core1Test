@@ -6,26 +6,6 @@ declare module 'Typed' {
     export = Typed;
 }
 
-interface IIdentificacao {
-    Login: ILogin;
-    Autenticacao: IAutenticacao;
-}
-
-interface IAutenticacao {
-    Autenticado: boolean;
-    Autenticar(LoginModel: ILoginModel): ILoginModel;
-}
-
-interface ILogin {
-    Autenticacao: IAutenticacao;
-    Logar: Function;
-}
-
-interface ILoginModel {
-    Email: string;
-    Senha?: string;
-}
-
 declare module Typed.UiExtras {
     interface IFutureStateProvider {
         futureState(route: Typed.Ui.IState): void;

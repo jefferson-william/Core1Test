@@ -190,7 +190,7 @@ require.config({
         LayoutController: { deps: ['App'] },
         HeaderController: { deps: ['App'] },
         FooterController: { deps: ['App'] },
-        LoginIndexController: { deps: ['App', 'input', 'whiteframe', 'css!LoginIndexCss'] },
+        LoginIndexController: { deps: ['App', 'IdentificacaoService', 'input', 'whiteframe', 'button', 'css!LoginIndexCss'] },
     }
 });
 
