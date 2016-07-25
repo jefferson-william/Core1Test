@@ -31,7 +31,7 @@ define([
         },
         'LayoutLogin': {
             url: '/login/',
-            dependencies: ['LoginIndexController'],
+            dependencies: ['LoginIndexController', 'FooterController'],
             views: {
                 '': {
                     templateUrl: '/partials/Login/Layout.html',
@@ -40,6 +40,11 @@ define([
                     templateUrl: '/partials/Login/Index.html',
                     controller: 'LoginIndexController',
                     controllerAs: 'LoginIndex',
+                },
+                'Footer@LayoutLogin': {
+                    templateUrl: '/partials/Footer.html',
+                    controller: 'FooterController',
+                    controllerAs: 'Footer',
                 }
             }
         }

@@ -14,12 +14,13 @@ define([
 	Lazyload: Typed.ILazyload) => {
 
 	var app: any, bootstrap: any,
-		Configuration: Function, Runner: Function;
+		Configuration: Function, Runner: Function, Locales: {};
 
 	app = angular.module('App', [
         'ngLocale', 'ngResource', 'ngAria', 'ngAnimate', 'ngSanitize', 'ngMessages', 'ngCookies',
         'ui.router',
         'material.core',
+        'pascalprecht.translate', 'tmh.dynamicLocale'
     ]);
 
     app.bootstrap = () => {
@@ -37,7 +38,9 @@ define([
         $provide: angular.auto.IProvideService,
         $filterProvider: angular.IFilterProvider,
         $compileProvider: angular.ICompileProvider,
-        $mdThemingProvider: Typed.Material.ITheme): void => {
+        $mdThemingProvider: Typed.Material.ITheme,
+        $translateProvider,
+        tmhDynamicLocaleProvider): void => {
 
         let overrideProvider: {};
         
@@ -67,10 +70,19 @@ define([
         $locationProvider.html5Mode(false);
 
         $mdThemingProvider.theme('default').primaryPalette('teal').accentPalette('teal');
+
+        $translateProvider.useMissingTranslationHandlerLog();
+        $translateProvider.useStaticFilesLoader({
+            prefix: '/resources/lang/locale_', // path to translations files
+            suffix: '.json' // suffix, currently- extension of the translations
+        });
+        $translateProvider.preferredLanguage('pt-br'); // is applied on first load
+        $translateProvider.useLocalStorage(); // saves selected language to localStorage
+        tmhDynamicLocaleProvider.localeLocationPattern('/bower_components/angular-i18n/angular-locale_{{locale}}.js');
     };
     Configuration.$inject = ['$stateProvider', '$urlRouterProvider',
         '$locationProvider', '$controllerProvider', '$provide', '$filterProvider', '$compileProvider',
-        '$mdThemingProvider'];
+        '$mdThemingProvider', '$translateProvider', 'tmhDynamicLocaleProvider'];
 
     /**
      * Rodar ações ao iniciar a aplicação
@@ -113,10 +125,17 @@ define([
     };
     Runner.$inject = ['$rootScope', '$state', 'IdentificacaoService'];
 
-    app.config(Configuration);
-    app.run(Runner);
+    Locales = {
+        'locales': {
+            'en-us': 'English',
+            'pt-br': 'Português',
+        },
+        'preferredLocale': 'pt-br'
+    };
 
-	bootstrap = angularAMD.bootstrap(app)
+    app.constant('LOCALES', Locales).config(Configuration).run(Runner);
+
+	bootstrap = angularAMD.bootstrap(app);
 
     return bootstrap;
 });

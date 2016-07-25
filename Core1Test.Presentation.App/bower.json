@@ -24,7 +24,12 @@
     "angular-ui-router": "^0.3.0",
     "ui-router-extras": "~0.1.2",
     "angular-material-data-table": "~0.10.3",
-    "angularAMD": "https://github.com/jefferson-william/angularAMD.git#~0.2.1"
+    "angularAMD": "https://github.com/jefferson-william/angularAMD.git#~0.2.1",
+    "angular-translate": "^2.11.1",
+    "angular-translate-loader-static-files": "^2.11.1",
+    "angular-translate-storage-local": "^2.11.1",
+    "angular-translate-handler-log": "^2.11.1",
+    "angular-dynamic-locale": "^0.1.32"
   },
   "devDependencies": {
     "mocha": "2.4.5",

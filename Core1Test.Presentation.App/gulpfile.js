@@ -490,7 +490,7 @@ gulp.task('watch-tests', function () {
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        notify: false,
+        notify: true,
         port: 9000, 
         ui: false,
         server: {

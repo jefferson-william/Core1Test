@@ -1,20 +1,20 @@
 <form name="LoginForm" md-whiteframe="3" ng-submit="LoginIndex.Submit(LoginIndex.LoginModel, LoginForm)" novalidate>
-	<h2>Login</h1>
+	<h2>Login {{'Esplendido!' | translate}}</h1>
 	<div layout="column">
 		<div flex="">
 			<md-input-container>
-				<label>E-mail</label>
+				<label>{{'E-mail' | translate}}</label>
 				<input name="Email" type="email" ng-model="LoginIndex.LoginModel.Email" required>
 			</md-input-container>
 		</div>
 		<div flex="">
 			<md-input-container>
-				<label>Senha</label>
+				<label>{{'Senha' | translate}}</label>
 				<input name="Senha" type="password" ng-model="LoginIndex.LoginModel.Senha" required>
 			</md-input-container>
 		</div>
 		<div flex="">
-			<button type="submit" class="md-mini md-button md-primary" aria-label="Enviar dados do formulário" md-ripple-size="full">ENVIAR</button>
+			<button type="submit" class="md-mini md-button md-primary" aria-label="Enviar dados do formulário" md-ripple-size="full">{{'Logar' | translate | uppercase}}</button>
 		</div>
 	</div>
 </form>
